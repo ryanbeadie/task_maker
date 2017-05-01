@@ -47,7 +47,7 @@ function getTasks() {
           response[i].task +
         "'>" + response[i].task + " -" +  " " +
         //"<select class='complete' " + "' data-done='" + response[i].id + "'><option>Not Done</option><option>Done</option></select>'" +
-        "<select class='complete' " + "' data-done='" + response[i].id + "'><option label='Not Done' value='1'>false</option><option label='Done' value='2'>True</option></select>'" +
+        "<select class='complete' " + "' data-done='" + response[i].id + "'><option label='Not Done' value= FALSE>false</option><option label='Done' value=TRUE>True</option></select>'" +
         "<button class='delete'  " + "' data-id='" + response[i].id + "'>Delete</button>" +
         "</div>");
 
@@ -82,21 +82,20 @@ $.ajax({
 function completeTask(){
 
   var id = $(this).data('id');
-  var isItDone = $('.complete').val();
-  var isIt = $('.complete').text();
-  //if I could get the value of selector program would work 
+  var isItDone = $(this).val();
+
+
 
 
   console.log( 'var isItDone=',isItDone );
-  console.log('var isIt' , isIt);
+  
 
 
   var complete = {
     id: id,
-    //need true or false from completed select button
+    isItDone: isItDone
   };
-//send to data base
-  console.log('complete function called' );
+
 
 $.ajax({
   url: '/complete',
