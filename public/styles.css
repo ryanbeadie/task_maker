@@ -1,0 +1,54 @@
+
+body {
+   background-image: url("http://holhom.com/wp-content/uploads/sites/2/2015/09/SKY-Grass-BG.png");
+   text-align: center;
+}
+
+
+
+select {
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+}
+
+
+
+input {
+    font-size: 100%;
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+
+
+#inputTasks {
+    background-color: #39e600;
+    text-align: center;
+}
+
+
+
+#taskOne[type=text] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
