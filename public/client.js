@@ -15,6 +15,7 @@ getTasks();
 //function send data to db
 function sendTask(){
 
+
       var taskToSend= {
         theTask: $('#taskOne').val(),
       };
@@ -34,7 +35,7 @@ $.ajax({
 
 // get everything from db
 function getTasks() {
-
+  $('#taskOne').val('');
   $('#listOfTasks').empty();
   $.ajax({
     url: '/getTasks',
@@ -46,7 +47,6 @@ function getTasks() {
          "' data-item='" +
           response[i].task +
         "'>" + response[i].task + " -" +  " " +
-        //"<select class='complete' " + "' data-done='" + response[i].id + "'><option>Not Done</option><option>Done</option></select>'" +
         "<select class='complete' " + "' data-id='" + response[i].id +"' data-done='" + response[i].id + "'><option label='Not Done' value= FALSE>false</option><option label='Done' value=TRUE>True</option></select>'" +
         "<button class='delete'  " + "' data-id='" + response[i].id + "'>Delete</button>" +
         "</div>");

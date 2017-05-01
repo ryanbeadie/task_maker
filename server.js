@@ -43,7 +43,7 @@ app.post('/tasks', function(req, res){
       console.log('connect to DB in tasks');
 
       connection.query ("INSERT INTO tasks_to_be_done (task , completed ) VALUES ($1 , $2 )", [req.body.theTask, "FALSE"]);
-      
+
       done();
       res.sendStatus (201 );
     }//end else
@@ -94,7 +94,7 @@ app.post('/delete', function(req, res){
 });
 
 app.post('/complete', function(req, res){
-  console.log('in send task to database');
+  console.log('in complte task to database');
   pool.connect(function (err, connection, done) {
     if (err) {
       console.log( err );
