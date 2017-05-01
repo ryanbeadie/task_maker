@@ -101,9 +101,11 @@ app.post('/complete', function(req, res){
       console.log( err );
       res.sendStaus( 400 );
     } else {
-      console.log('connect to DB in delete tasks');
-
-      // connection.query ( "UPDATE tasks_to_be_done  SET completed = " + req.body.isItDone + " where id =" + req.body.id);
+      console.log('connect to DB in complete tasks');
+      console.log(req.body.isItDone);
+      console.log(req.body.id);
+    
+      connection.query ( "UPDATE tasks_to_be_done  SET completed = " + req.body.isItDone + " where id =" + req.body.id);
 
       done();
       res.sendStatus (201 );

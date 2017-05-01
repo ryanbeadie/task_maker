@@ -47,7 +47,7 @@ function getTasks() {
           response[i].task +
         "'>" + response[i].task + " -" +  " " +
         //"<select class='complete' " + "' data-done='" + response[i].id + "'><option>Not Done</option><option>Done</option></select>'" +
-        "<select class='complete' " + "' data-done='" + response[i].id + "'><option label='Not Done' value= FALSE>false</option><option label='Done' value=TRUE>True</option></select>'" +
+        "<select class='complete' " + "' data-id='" + response[i].id +"' data-done='" + response[i].id + "'><option label='Not Done' value= FALSE>false</option><option label='Done' value=TRUE>True</option></select>'" +
         "<button class='delete'  " + "' data-id='" + response[i].id + "'>Delete</button>" +
         "</div>");
 
@@ -65,7 +65,7 @@ function deleteTask(){
     var deleteToSend= {
       id: id,
       };
-
+      console.log('id in delete=',id);
 $.ajax({
   url: '/delete',
   type: 'POST',
@@ -85,6 +85,7 @@ function completeTask(){
   var isItDone = $(this).val();
 
   console.log( 'var isItDone=',isItDone );
+  console.log( 'id=', id);
 
   var complete = {
     id: id,
