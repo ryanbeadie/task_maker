@@ -84,8 +84,6 @@ function completeTask(){
   var id = $(this).data('id');
   var isItDone = $(this).val();
 
-  console.log( 'var isItDone=',isItDone );
-  console.log( 'id=', id);
 
   var complete = {
     id: id,

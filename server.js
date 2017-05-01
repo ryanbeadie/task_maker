@@ -42,8 +42,8 @@ app.post('/tasks', function(req, res){
     } else {
       console.log('connect to DB in tasks');
 
-      // connection.query ("INSERT INTO tasks_to_be_done (task , completed ) VALUES ($1 , $2 )", [req.body.theTask, "FALSE"]);
-      connection.query ("INSERT INTO tasks_to_be_done (task) VALUES ($1 )", [req.body.theTask]);
+      connection.query ("INSERT INTO tasks_to_be_done (task , completed ) VALUES ($1 , $2 )", [req.body.theTask, "FALSE"]);
+      
       done();
       res.sendStatus (201 );
     }//end else
@@ -87,7 +87,6 @@ app.post('/delete', function(req, res){
 
       connection.query ( "DELETE from tasks_to_be_done  where id=" + req.body.id);
 
-
       done();
       res.sendStatus (201 );
     }//end else
@@ -104,7 +103,7 @@ app.post('/complete', function(req, res){
       console.log('connect to DB in complete tasks');
       console.log(req.body.isItDone);
       console.log(req.body.id);
-    
+
       connection.query ( "UPDATE tasks_to_be_done  SET completed = " + req.body.isItDone + " where id =" + req.body.id);
 
       done();
